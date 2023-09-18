@@ -1,0 +1,3 @@
+[submodule "Go_Pong"]
+	path = Go_Pong
+	url = git@github.com:u3-studios/Go_Pong.git
