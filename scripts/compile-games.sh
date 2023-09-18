@@ -12,13 +12,14 @@ git submodule update --init
 # Stash eventual git changes
 git stash
 
+GOPONG_DIR="../Go_Pong"
 # Compile Go_Pong
-./Go_Pong/scripts/build-wasm.sh
+${GOPONG_DIR}/scripts/build-wasm.sh
 
 # Copy to our folder
-cp ./Go_Pong/build/go_pong.wasm ./web/games/gopong/go_pong.wasm
+cp ${GOPONG_DIR}/build/go_pong.wasm ./docs/games/gopong/go_pong.wasm
 
 # Git magic, add, commit, restore stashed changes
-git add web/games/gopong/go_pong.wasm
+git add docs/games/gopong/go_pong.wasm
 git commit -m "Update Go_Pong"
 git stash pop
