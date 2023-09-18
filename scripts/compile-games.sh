@@ -15,11 +15,10 @@ git stash
 # Compile Go_Pong
 ./Go_Pong/scripts/build-wasm.sh
 
-# Copy and add to git
+# Copy to our folder
 cp ./Go_Pong/build/go_pong.wasm ./web/games/gopong/go_pong.wasm
+
+# Git magic, add, commit, restore stashed changes
 git add web/games/gopong/go_pong.wasm
-
 git commit -m "Update Go_Pong"
-
-# Pop git changes
 git stash pop
