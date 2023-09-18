@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Go Pong Game</title>
+</head>
+
+<body>
+    <canvas id="pongCanvas" width="800" height="400"></canvas>
+
+    <script>
+        // Function to load and initialize the WebAssembly module
+        async function loadWasm() {
+            const go = new Go();
+            const wasmFile = 'go_pong.wasm'; // Replace with the actual name of your wasm file
+
+            const { instance } = await WebAssembly.instantiateStreaming(fetch(wasmFile), go.importObject);
+            go.run(instance);
+        }
+
+        // Call the loadWasm function when the page finishes loading
+        window.addEventListener('load', loadWasm);
+    </script>
+    <script src="../common/wasm_exec.js"></script>
+</body>
+
+</html>
