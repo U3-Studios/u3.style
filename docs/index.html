@@ -6,29 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css">
     <style>
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .navbutton {
+            color: #eee;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.5rem;
+            transition: all 0.2s ease-out;
         }
 
-        li {
-            display: inline;
-            margin-right: 20px;
-            /* You can adjust the spacing between links as desired */
+        .navbutton:hover {
+            color: #53a1f5;
         }
     </style>
 </head>
 
 <body class="bg-gray-100 h-screen" style="background-color: #0B2642">
     <div id="ui-container" class="h-auto min-h-screen grid justify-center items-center">
-        <header class="flex flex-col items-center"><img src="./logo.png" alt="abstract" class="h-40 object-cover">
-        </header>
-        <ul>
-            <li><a href="/games/">Games</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/privacy/">Privacy</a></li>
-            <li><a href="/support/">Support</a></li>
-        </ul>
+        <div>
+            <header class="flex flex-col items-center"><img src="./logo.png" alt="abstract" class="h-40 object-cover">
+            </header>
+            <nav class="text-xl mt-8">
+                <ul class="flex space-x-4">
+                    <li><a href="games" class="navbutton">Games</a></li>
+                    <li><a href="about" class="navbutton">About</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </body>
 
